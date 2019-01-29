@@ -9,7 +9,7 @@ metadata:
     seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -53,14 +53,14 @@ spec:
 ---
 apiVersion: v1
 data:
-  admin-password: OE5ydHd0V0lsQVdhVGczUVFsS0dUOGJjckNqVEhYb1g4dldKaXlNQQ==
+  admin-password: QjZLeXFlNUM3MlIyZ2xHYXlLbHlNZEhHendiU0RseXJWNmFVZHhENQ==
   admin-user: YWRtaW4=
   ldap-toml: ""
 kind: Secret
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -97,13 +97,13 @@ data:
     --connect-timeout 60 \
     --max-time 60 \
     -H "Accept: application/json" \
-    -H "Content-Type: application/json;charset=UTF-8" \https://grafana.com/api/dashboards/6417/revisions/1/download| sed 's|\"datasource\":[^,]*|\"datasource\": \"Prometheus\"|g' \
+    -H "Content-Type: application/json;charset=UTF-8" \https://grafana.com/api/dashboards/6417/revisions/1/download| sed 's|\"datasource\":[^,]*|\"datasource\": \"Prometheus\"|g'\
     > /var/lib/grafana/dashboards/default/cluster-metrics.json
     curl -sk \
     --connect-timeout 60 \
     --max-time 60 \
     -H "Accept: application/json" \
-    -H "Content-Type: application/json;charset=UTF-8" \https://grafana.com/api/dashboards/6739/revisions/1/download| sed 's|\"datasource\":[^,]*|\"datasource\": \"Prometheus\"|g' \
+    -H "Content-Type: application/json;charset=UTF-8" \https://grafana.com/api/dashboards/6739/revisions/1/download| sed 's|\"datasource\":[^,]*|\"datasource\": \"Prometheus\"|g'\
     > /var/lib/grafana/dashboards/default/persistent-volumes.json
   grafana.ini: |
     [analytics]
@@ -121,7 +121,7 @@ kind: ConfigMap
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -134,7 +134,7 @@ kind: ConfigMap
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     dashboard-provider: default
     heritage: Tiller
     release: grafana
@@ -147,7 +147,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -166,7 +166,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -178,7 +178,7 @@ kind: ClusterRole
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana-clusterrole
@@ -191,7 +191,7 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana-clusterrolebinding
@@ -211,7 +211,7 @@ kind: Role
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -232,7 +232,7 @@ kind: RoleBinding
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -244,6 +244,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: grafana
+  namespace: grafana
 
 ---
 apiVersion: v1
@@ -251,7 +252,7 @@ kind: Service
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
@@ -273,7 +274,7 @@ kind: Deployment
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.24.2
+    chart: grafana-1.25.4
     heritage: Tiller
     release: grafana
   name: grafana
