@@ -27,27 +27,14 @@ data:
     ---
     client:
       hosts:
-        - CHANGEME.host
+        - elasticsearch-client.elasticsearch.svc.cluster.local
       port: 9200
-      # url_prefix:
-      # use_ssl: True
-      # certificate:
-      # client_cert:
-      # client_key:
-      # ssl_no_validate: True
-      # http_auth:
-      # timeout: 30
-      # master_only: False
-    # logging:
-    #   loglevel: INFO
-    #   logfile:
-    #   logformat: default
-    #   blacklist: ['elasticsearch', 'urllib3']
+      use_ssl: True
 kind: ConfigMap
 metadata:
   labels:
     app: elasticsearch-curator
-    chart: elasticsearch-curator-1.1.0
+    chart: elasticsearch-curator-1.2.0
     heritage: Tiller
     release: elasticsearch-curator
   name: elasticsearch-curator-config
@@ -59,7 +46,7 @@ kind: CronJob
 metadata:
   labels:
     app: elasticsearch-curator
-    chart: elasticsearch-curator-1.1.0
+    chart: elasticsearch-curator-1.2.0
     heritage: Tiller
     release: elasticsearch-curator
   name: elasticsearch-curator

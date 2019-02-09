@@ -9,7 +9,7 @@ metadata:
     seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -53,14 +53,14 @@ spec:
 ---
 apiVersion: v1
 data:
-  admin-password: MlRkdFVUcGtNQjdzUjBaN0lNZmZUeDI3bFpLQlplbEc3YW1IZUhVUg==
+  admin-password: YVgxUDJDNjgwY0NXQ0U0NDE0dXcyc1Fvb0t6ZlZmNE1CanAwbm5CQg==
   admin-user: YWRtaW4=
   ldap-toml: ""
 kind: Secret
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -71,7 +71,7 @@ type: Opaque
 apiVersion: v1
 data:
   dashboardproviders.yaml: |
-    apiVersion: 1
+    apiVersion: "1"
     providers:
     - disableDeletion: false
       editable: true
@@ -79,10 +79,10 @@ data:
       name: default
       options:
         path: /var/lib/grafana/dashboards/default
-      orgId: 1
+      orgId: "1"
       type: file
   datasources.yaml: |
-    apiVersion: 1
+    apiVersion: "1"
     datasources:
     - access: proxy
       isDefault: true
@@ -121,7 +121,7 @@ kind: ConfigMap
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -134,7 +134,7 @@ kind: ConfigMap
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     dashboard-provider: default
     heritage: Tiller
     release: grafana
@@ -147,7 +147,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -166,7 +166,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -178,7 +178,7 @@ kind: ClusterRole
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana-clusterrole
@@ -191,7 +191,7 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana-clusterrolebinding
@@ -211,7 +211,7 @@ kind: Role
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -232,7 +232,7 @@ kind: RoleBinding
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -252,7 +252,7 @@ kind: Service
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana
@@ -274,7 +274,7 @@ kind: Deployment
 metadata:
   labels:
     app: grafana
-    chart: grafana-1.25.4
+    chart: grafana-1.26.1
     heritage: Tiller
     release: grafana
   name: grafana

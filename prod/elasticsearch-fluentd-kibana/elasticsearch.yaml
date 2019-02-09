@@ -77,7 +77,7 @@ kind: ConfigMap
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     heritage: Tiller
     release: elasticsearch
   name: elasticsearch
@@ -89,7 +89,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: client
     heritage: Tiller
     release: elasticsearch
@@ -102,7 +102,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: data
     heritage: Tiller
     release: elasticsearch
@@ -115,7 +115,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: master
     heritage: Tiller
     release: elasticsearch
@@ -128,7 +128,7 @@ kind: Service
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: client
     heritage: Tiller
     release: elasticsearch
@@ -151,7 +151,7 @@ kind: Service
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: master
     heritage: Tiller
     release: elasticsearch
@@ -173,7 +173,7 @@ kind: Deployment
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: client
     heritage: Tiller
     release: elasticsearch
@@ -215,7 +215,7 @@ spec:
           value: '-Djava.net.preferIPv4Stack=true -Xms512m -Xmx512m  '
         - name: MINIMUM_MASTER_NODES
           value: "2"
-        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.0
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -268,7 +268,7 @@ kind: StatefulSet
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: data
     heritage: Tiller
     release: elasticsearch
@@ -310,7 +310,7 @@ spec:
           value: '-Djava.net.preferIPv4Stack=true -Xms1536m -Xmx1536m  '
         - name: MINIMUM_MASTER_NODES
           value: "2"
-        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.0
         imagePullPolicy: IfNotPresent
         lifecycle:
           postStart:
@@ -370,7 +370,7 @@ spec:
           done; chown elasticsearch:elasticsearch /usr/share/elasticsearch/logs; for logfile in $(find /usr/share/elasticsearch/logs -mindepth 1 -maxdepth 1 -not -name ".snapshot"); do
             chown -R elasticsearch:elasticsearch $logfile;
           done
-        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.0
         imagePullPolicy: IfNotPresent
         name: chown
         resources: {}
@@ -406,7 +406,7 @@ kind: StatefulSet
 metadata:
   labels:
     app: elasticsearch
-    chart: elasticsearch-1.17.2
+    chart: elasticsearch-1.19.1
     component: master
     heritage: Tiller
     release: elasticsearch
@@ -448,7 +448,7 @@ spec:
           value: '-Djava.net.preferIPv4Stack=true -Xms512m -Xmx512m  '
         - name: MINIMUM_MASTER_NODES
           value: "2"
-        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.0
         imagePullPolicy: IfNotPresent
         name: elasticsearch
         ports:
@@ -491,7 +491,7 @@ spec:
           done; chown elasticsearch:elasticsearch /usr/share/elasticsearch/logs; for logfile in $(find /usr/share/elasticsearch/logs -mindepth 1 -maxdepth 1 -not -name ".snapshot"); do
             chown -R elasticsearch:elasticsearch $logfile;
           done
-        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4
+        image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.0
         imagePullPolicy: IfNotPresent
         name: chown
         resources: {}
