@@ -2249,7 +2249,6 @@ metadata:
   name: istio-ingressgateway
   namespace: istio-system
 spec:
-  loadBalancerIP: x.x.x.x
   ports:
   - name: http2
     nodePort: 31380
