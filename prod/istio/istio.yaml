@@ -255,7 +255,7 @@ data:
     [[ .MeshConfig.ProxyListenPort ]]\n    - \"-u\"\n    - 1337\n    - \"-m\"\n    -
     [[ annotation .ObjectMeta `sidecar.istio.io/interceptionMode` .ProxyConfig.InterceptionMode
     ]]\n    - \"-i\"\n    - \"[[ annotation .ObjectMeta `traffic.sidecar.istio.io/includeOutboundIPRanges`
-    \ \"0.0.0.0\"  ]]\"\n    - \"-x\"\n    - \"[[ annotation .ObjectMeta `traffic.sidecar.istio.io/excludeOutboundIPRanges`
+    \ \"*\"  ]]\"\n    - \"-x\"\n    - \"[[ annotation .ObjectMeta `traffic.sidecar.istio.io/excludeOutboundIPRanges`
     \ \"\"  ]]\"\n    - \"-b\"\n    - \"[[ annotation .ObjectMeta `traffic.sidecar.istio.io/includeInboundPorts`
     (includeInboundPorts .Spec.Containers) ]]\"\n    - \"-d\"\n    - \"[[ excludeInboundPort
     (annotation .ObjectMeta `status.sidecar.istio.io/port`  0 ) (annotation .ObjectMeta
